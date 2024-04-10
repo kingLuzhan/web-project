@@ -121,7 +121,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						<h3> Settings</h3>
 					</div>
 </a>
-<a href="../Admin/dashboard.jsp">
+<a href="../session/close.jsp">
 					<div class="nav-option logout">
 						<img src=
 "../icons/logout.icns"
@@ -175,7 +175,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 				<div class="box box3">
 					<div class="text">
 						<h2 class="topic-heading">320</h2>
-						<h2 class="topic">Comments</h2>
+						<h2 class="topic">Total Sales</h2>
 					</div>
 
 					<img src=
@@ -186,7 +186,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 				<div class="box box4">
 					<div class="text">
 						<h2 class="topic-heading">70</h2>
-						<h2 class="topic">Published</h2>
+						<h2 class="topic">Revenue</h2>
 					</div>
 
 					<img src=

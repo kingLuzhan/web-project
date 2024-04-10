@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name = "viewport" content="width=device-width,initial-scale=1.0">
+<script src="https://kit.fontawesome.com/0d3bdb6283.js"></script>
+<title>Insert title here</title>
+
+</head>
+<style>
+@charset "ISO-8859-1";
+
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgb(179, 165, 143),rgb(105, 98, 87),rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url("Imgs/clothes2.jpg");
+    background-position: center;
+    /* background-color: green; */
+    background-size: cover;
+    position: relative;
+}
+
+.form-box{
+
+    width: 35%;
+    min-width: 450px;
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 50px 60px 70px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.form-box h1{
+	font-family: Century Gothic;
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #8c7258;;
+    position: relative;
+}
+
+.form-box h1:after{
+    content:'';
+    width: 30px;
+    height:4px;
+    border-radius: 3px;
+    background: #8c7258;;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.input-field{
+    background: #eaeaea;
+    margin: 15px 0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+
+
+
+input{
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 18px 15px;
+}
+
+.input-field i{
+    margin-left: 15px;
+    color: #999;
+}
+
+.form p {
+    text-align: left;
+    font-size: 13px;
+}
+
+form p a{
+    text-decoration: none;
+    color: #8c7258;;
+}
+
+.btn-field{
+	margin-top: 10px;
+	margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-field button{
+    flex-basis: 100%;
+    background: linear-gradient(to right,#997e63,#a68b6d,#b59b7f,#bda388,#c4ab91,#c7b099,#c7b099,#c4ab91,#bda388,#b59b7f,#a68b6d,#997e63);;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 1s;
+}
+.btn-field button:hover{
+	background: linear-gradient(to right,#a88d72,#a68b6d,#b59b7f,#b59b7f,#a68b6d,#a88d72);
+}
+
+
+
+.btn-field button.disable{
+    background: #eaeaea;
+    color: #555;
+    }
+.disable{
+   display: none;
+ }  
+
+
+</style>
+<body>
+
+
+ <div class="container">
+            <div class ="form-box">
+                <h1 id="title">Login</h1>
+                <form action="/WASA/view/bean/login.jsp" method="post">
+
+                    
+                        <div class="input-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" placeholder="Email" name="email" required>
+                        </div>
+
+                    
+                    <div class="input-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <input type="password" placeholder="Password" name="pass" required>  
+                    </div>
+                    
+                    <p>Forgot Password??<a href="#">Click Here</a></p>
+                    <div class="btn-field">
+                    <button type="submit" id="signupBtn">Sign Up</button>            
+                </div>
+                <p>Don't have an account??Create an account!<a href="signup.html">Click Here</a></p>
+                </div>
+               </form> 
+            </div>
+                
+            </div>
+
+
+
+</body>
+</html>

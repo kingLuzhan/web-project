@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@page import="com.wasa.model.ProductDetails"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.wasa.controller.ProductDetail"%>
 <html lang="en">
 
 <head>
@@ -81,7 +84,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 							alt="dashboard">
 						<h3> Dashboard</h3>
 					</div></a>
-				<a href="../Admin/dashboard.jsp">
+				<a href="../Admin/product.jsp">
 					<div class="nav-option option1">
 						<img src="../icons/products.png"
 							class="nav-img"
@@ -89,14 +92,14 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						<h3> Product</h3>
 					</div>
 				</a>
-				<a href="../Admin/dashboard.jsp">
+				<a href="../Admin/orders.jsp">
 					<div class="nav-option option3">
 						<img src="../icons/orders.png" class="nav-img"
 							alt="report">
 						<h3> Order</h3>
 					</div>
 					</a>
-					<a href="../Admin/dashboard.jsp">
+					<a href="../Admin/customer.jsp">
 					<div class="nav-option option4">
 						<img src="../icons/customer.png"
 							class="nav-img"
@@ -104,7 +107,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						<h3> Customer</h3>
 					</div>
 					</a>
-<a href="../Admin/dashboard.jsp">
+<a href="../Admin/profile.jsp">
 					<div class="nav-option option5">
 						<img src=
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
@@ -121,7 +124,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						<h3> Settings</h3>
 					</div>
 </a>
-<a href="../Admin/dashboard.jsp">
+<a href="../session/close.jsp">
 					<div class="nav-option logout">
 						<img src=
 "../icons/logout.icns"
@@ -148,7 +151,6 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 				</div>
 			</div>
 
-
 			<div class="report-container">
 				<div class="report-header">
 				
@@ -166,31 +168,41 @@ tr:nth-child(even) {background-color: #f2f2f2;}
       <th>Price</th>
       <th>Description</th>
       <th>Category</th>
+      <th>Brand</th>
+      <th>Color</th>
+      <th>Size</th>
       <th>Quantity</th>
       <th>Action</th>
     </tr>
-    <tr>
-    <td>#101</td>
-      	<td><img alt="icon" src="../icons/shirt.jpg" style="heigh:120px; width:120px; "></td>
-		<td>Product A</td>
-		<td>$50.00</td>
-		<td>Product A 50000</td>
-		<td>Category 1</td>
-		<td>Category 2</td>
-		<td><a href="#" class="action">Edit</a> | <a href="#" class="action">Delete</a>
+    <%ProductDetail pd = new ProductDetail();
+	ArrayList<ProductDetails> productList = pd.getProductDetail();
+	for(ProductDetails product : productList){ 
+%>    <tr>
+    <td>#<% out.print(product.getProduct_id()); %></td>
+      	<td><img alt="icon" src="../icons/<%=product.getImage() %>" style="heigh:120px; width:120px; "></td>
+		<td><% out.print(product.getProduct_name()); %></td>
+		<td>$<% out.print(product.getProduct_price()); %></td>
+		<td><% out.print(product.getProduct_desc()); %></td>
+		<td><%= product.getCategory() %></td>
+		<td><% out.print(product.getBrand()); %></td>
+		<td><% out.print(product.getColor()); %></td>
+		<td><% out.print(product.getSize()); %></td>
+		<td><% out.print(product.getQuantity()); %></td>
+		<td><a class="btn" href="editProduct.jsp?orderId=<%= product.getProduct_id() %>" style="text-decoration: none;">Edit</a> | <a href="removeProduct.jsp?productId=<%= product.getProduct_id() %>" class="action">Delete</a>
     
     </tr>
+    <%} %>
    
   </table><br>
   
 </div>
 <jsp:include page="addProduct.jsp"></jsp:include>
-
+<jsp:include page="otherProductDetails.jsp"></jsp:include>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<script src="../js/admin.js"></script>
+	
 </body>
 </html>

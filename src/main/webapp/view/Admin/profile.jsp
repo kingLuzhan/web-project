@@ -1,5 +1,14 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.mysql.cj.x.protobuf.MysqlxDatatypes.Array"%>
+<%@page import="com.wasa.model.UserDetails"%>
+<%@page import="java.util.List"%>
+<%@page import="com.wasa.controller.Customer"%>
+<%@page import="com.wasa.model.CustomerDetails"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+    <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 <!DOCTYPE html>
 
 <!-- Design by Code Media(codemediaweb.com)-->
@@ -18,6 +27,7 @@
 		href="style.css">
 </head>
 <body>
+
 <header>
 
 		<div class="logosec">
@@ -60,7 +70,7 @@
 		<div class="navcontainer">
 			<nav class="nav">
 				<div class="nav-upper-options">
-					<a href="../Admin/dashboard.jsp"><div class="nav-option option1">
+					<a href="../Admin/dashboard.jsp"><div class="nav-option option3">
 						<img src=
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
 							class="nav-img"
@@ -91,7 +101,7 @@
 					</div>
 					</a>
 <a href="../Admin/profile.jsp">
-					<div class="nav-option option5">
+					<div class="nav-option option1">
 						<img src=
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
 							class="nav-img"
@@ -99,7 +109,7 @@
 						<h3> Profile</h3>
 					</div>
 </a>
-<a href="../Admin/setting.jsp">
+<a href="#">
 					<div class="nav-option option6">
 						<img src="../icons/setting.png"
 							class="nav-img"
@@ -107,7 +117,7 @@
 						<h3> Settings</h3>
 					</div>
 </a>
-<a href="../Admin/dashboard.jsp">
+<a href="../session/close.jsp">
 					<div class="nav-option logout">
 						<img src=
 "../icons/logout.icns"
@@ -134,31 +144,34 @@
 				</div>
 			</div>
 
-			
+<% Customer customer =new Customer();
+ArrayList<UserDetails> userDetails = customer.getUserAccount("zx");
+for(UserDetails user : userDetails){ 
+%>
 
-<div class="wrapper">
+    <div class="wrapper">
     <div class="left">
         <img src="https://1.bp.blogspot.com/-vhmWFWO2r8U/YLjr2A57toI/AAAAAAAACO4/0GBonlEZPmAiQW4uvkCTm5LvlJVd_-l_wCNcBGAsYHQ/s16000/team-1-2.jpg" alt="user" width="145">
-        <h4>Anamika Roy</h4>
-         <p>Web Designer</p>
+        <h4><% out.print(user.getName());%></h4>
+         <p>Admin</p>
     </div>
     <div class="right">
         <div class="info">
-            <h3>About Me</h3>
+            <h3>About Admin</h3>
             <div class="info_data">
                  <div class="data">
                     <h4>Address</h4>
-                    <p>Newroad</p>
+                    <p><% out.print(user.getAddress());%></p>
                  </div>
                  <div class="data">
                    <h4>Phone</h4>
-                    <p>+977-985-602856</p>
+                    <p>+977-<% out.print(user.getNumber());%></p>
               </div>
             </div>
             <div class="info_data">
                  <div class="data">
                     <h4>Email</h4>
-                    <p>nabin@gmail.com</p>
+                    <p><% out.print(user.getEmail());%></p>
                  </div>
                  
             </div>
@@ -175,6 +188,8 @@
  
     </div>
 </div>
+<% } %>
+
 </div>
 </body>
 </html>

@@ -14,8 +14,8 @@ import com.wasa.model.Auth;
 public class LoginDetails {
 	private DatabaseConnection dc;
 	private Connection con;
-	private String usertype;
-	private String email;
+	private String user_type;
+	private int memberId;
 	public LoginDetails() {
 		// TODO Auto-generated constructor stub
 		try {
@@ -30,7 +30,7 @@ public class LoginDetails {
 	
 	public int loginDetails(Auth auth) {
 		int result=0;
-		String query="Select * from users";
+		String query="Select * from members";
 		try{
 			DatabaseConnection dc=new DatabaseConnection();
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -41,13 +41,12 @@ public class LoginDetails {
 			String password=auth.getPassword();
 			while(rs.next()){
 				
-				if (email.equals(rs.getString("email"))&& BCrypt.checkpw(password, rs.getString("password"))) {
-					this.usertype=rs.getString("usertype"); 
-					this.email=rs.getString("email");
+				if (email.equals(rs.getString("Member_email"))&& BCrypt.checkpw(password, rs.getString("password"))) {
+					this.user_type=rs.getString("user_type"); 
+					this.memberId=rs.getInt("Member_id");
 					result=1;
 				} 
-				
-						
+					
 			}
 			return result;
 			
@@ -59,9 +58,9 @@ public class LoginDetails {
 		
 	}
 	public String getUserType() {
-		return usertype;
+		return this.user_type;
 	}
-	public String getEmail() {
-		return email;
+	public int getMemberId() {
+		return memberId;
 	}
 }

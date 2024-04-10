@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Wasa Clothes</title>
+        <script src="https://kit.fontawesome.com/0d3bdb6283.js"></script>
+        <!-- <link rel="stylesheet" type="style/css" href="/home.css"> -->
+        <link rel="stylesheet" href="contact.css">
+    </head>
+    
+    
+    
+    <style>
+    
+	h1{
+	 text-align: center;
+	}
+	
+	h3{
+	font-size: 30px;
+	}
+
+	body{
+	 background-color: #ecedee;
+	 font-family: Franklin Gothic Book;
+
+	 
+	}
+	
+	.container{
+	background: white;
+	height: 650px;
+	border-radius: 5px;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding:15px;
+	box-shadow: 5px 5px 5px 5px #e0dede;
+	}
+	
+	
+	.row{
+	margin-bottom: 100px;
+	height:auto;
+	background: white;
+	}
+	
+	
+	
+	.column {
+  	float: left;
+  	width: 50%;
+  	}
+	
+	
+	
+	
+	
+	 
+	 
+	 .main_image{
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  border-bottom: 1px solid #eee;
+	  height: 400px;
+	  width: 100%;
+	  
+	  margin: 10px;
+	  
+	 }
+	 
+	 
+	 .column p{
+	 	font-size: 15px;
+	 }
+	 p{
+	  font-size: 15px
+	 }
+	 
+	 span{
+	  font-size: 14px;
+	  margin-left: 12px
+	 }
+	 
+
+	 
+	 .right-side{
+	  position: relative
+	 }
+	 
+
+
+
+.offer{
+ height:30px;
+ width: 100%;
+ background: grey;
+ 
+}
+marquee{
+ color: white;
+ background-image: url(avatar.jpeg);
+ 
+}
+
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+
+
+.normal button1{
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color:#73618c; 
+  border: 2px solid;
+  border-color: #73618c;
+}
+
+
+.button1:hover {
+  background-color: #73618c;
+  color: white;
+  border-color: #73618c;
+}
+
+
+
+
+
+
+form{
+margin-top: 20px;
+}
+
+
+img{
+	margin-left: 15px;
+	height: 620px;
+	width: 420px;
+	border-radius:5px;
+}
+
+
+
+</style>
+    
+    
+    
+<body>
+        <!-- <nav class="navMenu">
+          <a href="#">Home</a>
+          <a href="#">Blog</a>
+          <a href="#">Work</a>
+          <a href="#">About</a>
+          <div class="dot"></div>
+        </nav> -->
+
+        <section id="header" style="background-image: url(Imgs/clothes3.jpeg);">
+            <a href="home.html"><img src="Imgs/Logo_img.png" alt="Logo image" class="logo-header"></a>
+
+            <div>
+ 					<ul id="navbar">
+                            <li><a href="Home.jsp">Home</a></li>
+                            <li><a   href="products.jsp">Products</a></li>
+                            <li><a href="aboutus.html">About</a></li>
+                            <li><a class="active" href="contact.html">Contact</a></li>
+                            <li><a href="cartDetails.jsp"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                            <li><a href="profile.jsp"><i class="fa-solid fa-user"></i></a></li>
+                        </ul>
+            </div>
+        </section>
+        
+        
+        <div class="offer">
+	<marquee behavior="scroll" direction="left">Sale... Save up to 20% off</marquee>
+
+</div>
+<div class="offer">
+	<marquee behavior="scroll"  scrollamount="20" direction="right" bgcolor="black" height="30px" >Scam!      Scam!       Scam!</marquee>
+</div>
+
+
+
+
+       
+        
+        
+        
+        
+        
+  <div class="container">
+  <div class="row">
+  	<div class="column left">
+  		<p style="font:Copperplate Gothic">LEAVE A MESSAGE</p>
+   		<h2 style="font-size:25px;">We love to here form you.</h2>
+  		<form action="home.jsp">
+  			<input type="text" id="name" name="name" placeholder="Your Name">
+			</br>
+			<input type="text" id="email" name="email" placeholder="E-mail">
+			</br>
+    		<input type="text" id="subject" name="subject" placeholder="Subject">
+			</br>
+			<textarea id="message" name="message" placeholder="Your Message" style="height:200px"></textarea>
+			</br>
+			
+			<button class="normal button1" style="border: 2px solid black; border-radius:0px;">Submit</button>	
+
+  		</form>
+  	</div>
+  	<div class="column right">
+		<img src="Imgs/h&m3.jpg">
+    </div>
+  </div>
+</div>
+        
+        
+        
+ <section id="newsletter" class="section-p1 section-m1">
+            <div class="newslettertext">
+                <h4>Sign Up For Newsletters</h4>
+                <p>Get E-mail updates about our latest products and <span>special offers</span></p>
+            </div>
+            <div class="newsletterform">
+                <input type="text" placeholder="Your email address">
+                <button class="normal" style="height: 50px;margin-top: 6px;">Sign Up</button>
+            </div>
+        </section>	
+
+        <footer class="section-p1">
+            <div class="col">
+                <img src="Imgs/Logo_img.png" alt="Logo_image" class="logo-footer">
+                <h4>Contact</h4>
+                <p><strong>Address:</strong> Lions Marga, Pokhara 33800, Pokhara</p>
+                <p><strong>Phone:</strong> 061-538115 / 061-384756</p>
+                <p><strong>Hours:</strong> 08:00 - 19:00, Sun-Fri</p>
+                <div class="follow">
+                    <h4>Follow Us</h4>
+                    <div class="follow-icons">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <h4>About</h4>
+                <a href="#">About Us</a>
+                <a href="#">Delivery Information</a>
+                <a href="#">Privacy policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Contact Us</a>
+            </div>
+
+            <div class="col">
+                <h4>My Account</h4>
+                <a href="#">Sign In</a>
+                <a href="#">view Cart</a>
+                <a href="#">My Wishlist</a>
+                <a href="#">Track My Order</a>
+                <a href="#">Help</a>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2021, Wasa.com, Inc. or its affiliates</p>
+            </div>
+        </footer>
+        
+        
+        <div class="trail">
+		<div class="pointer pointer1"></div>
+		<div class="pointer pointer2"></div>
+		<div class="pointer pointer3"></div>
+		<div class="pointer pointer4"></div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script type="text/javascript">
+		$(document).mousemove(function(e){
+			$('.pointer').css({left:e.pageX, top:e.pageY});
+		})
+	</script>
+
+        <script src="script.js"></script>
+    </body>
+</html>
+
+

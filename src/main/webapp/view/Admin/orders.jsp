@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@page import="com.wasa.model.OrderDetail"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.wasa.controller.OrderDetails"%>
 <html lang="en">
 
 <head>
@@ -89,14 +92,14 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						<h3> Product</h3>
 					</div>
 				</a>
-				<a href="../Admin/dashboard.jsp">
+				<a href="../Admin/order.jsp">
 					<div class="nav-option option1">
 						<img src="../icons/orders.png" class="nav-img"
 							alt="report">
 						<h3> Order</h3>
 					</div>
 					</a>
-					<a href="../Admin/dashboard.jsp">
+					<a href="../Admin/customer.jsp">
 					<div class="nav-option option4">
 						<img src="../icons/customer.png"
 							class="nav-img"
@@ -104,7 +107,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						<h3> Customer</h3>
 					</div>
 					</a>
-<a href="../Admin/dashboard.jsp">
+<a href="../Admin/profile.jsp">
 					<div class="nav-option option5">
 						<img src=
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
@@ -113,7 +116,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						<h3> Profile</h3>
 					</div>
 </a>
-<a href="../Admin/dashboard.jsp">
+<a href="#">
 					<div class="nav-option option6">
 						<img src="../icons/setting.png"
 							class="nav-img"
@@ -121,7 +124,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 						<h3> Settings</h3>
 					</div>
 </a>
-<a href="../Admin/dashboard.jsp">
+<a href="../session/close.jsp">
 					<div class="nav-option logout">
 						<img src=
 "../icons/logout.icns"
@@ -161,34 +164,39 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     <tr>
       <th>Order Number</th>
       <th>Customer Name</th>
-      <th>Order Date</th>
+      <th>Product Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
       <th>Order Total</th>
       <th>Status</th>
     </tr>
+     <%OrderDetails pd = new OrderDetails();
+	ArrayList<OrderDetail> orderDetail = pd.getOrderDetails();
+	if(orderDetail != null){
+	for(OrderDetail od : orderDetail){ 
+  
+	  %>
     <tr>
-      <td>Jill</td>
-      <td>Smith</td>
-      <td>50</td>
-      <td>50</td>
-      <td>50</td>
+      <td><%= od.getOrder_id() %></td>
+      <td><%= od.getCustomer() %></td>
+      <td><%= od.getProduct() %></td>
+      <td><%= od.getPrice() %></td>
+      <td><%= od.getQuantity() %></td>
+      <td><%= od.getTotal_amount() %></td>
+      <td><%= od.getStatus() %></td>
     
     </tr>
-    <tr>
-      <td>Eve</td>
-      <td>Jackson</td>
-      <td>94</td>
-      <td>94</td>
-      <td>94</td>
-      
-    </tr>
-    <tr>
-      <td>Adam</td>
-      <td>Johnson</td>
-      <td>67</td>
-      <td>67</td>
-      <td>67</td>
-     
-    </tr>
+    <%}} else{
+    	
+    	%><tr><td>Null</td>
+    	<td>Null</td>
+    	<td>Null</td>
+    	<td>Null</td>
+    	<td>Null</td>
+    	<td>Null</td>
+    	<td>Null</td></tr><%
+    }%>
+ 
   </table>
 </div>
 				</div>

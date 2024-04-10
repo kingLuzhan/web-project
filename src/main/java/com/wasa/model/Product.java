@@ -8,45 +8,80 @@ public class Product implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private int product_id;
-
+	
 	private String product_name;
 	private int product_price;
 	private String product_desc;
 	private String image;
-	private String color;
-	private String brand;
-	private String category;
-	public String getImage() {
-		return image;
-	}
+	private int color;
+	private int brand;
+	private int category;
+	private int size;
+	private int quantity;
+	private int product_id;
+	
+	public Product() {
+		// TODO Auto-generated constructor stub
+		super();
+//		String product_name,String product_desc,int product_price,int color,int brand,int category,int size,int quantity
+//		this.product_name=product_name;
+//		this.product_price=product_price;
+//		this.product_desc=product_desc;
+//		this.brand=brand;
+//		this.color=color;
+//		this.category=category;
+//		this.size=size;
+//		this.quantity=quantity;
+		
 
-	public String getColor() {
+	}
+	
+	public int getColor() {
 		return color;
 	}
 
-	public String getBrand() {
+	public int getBrand() {
 		return brand;
 	}
 
-	public String getCategory() {
+	public int getCategory() {
 		return category;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public int getQuantity() {
+		return quantity;
 	}
 
 	public void setImage(String image) {
 		this.image = image;
 	}
 
-	public void setColor(String color) {
+	public void setColor(int color) {
 		this.color = color;
 	}
 
-	public void setBrand(String brand) {
+	public void setBrand(int brand) {
 		this.brand = brand;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(int category) {
 		this.category = category;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public String getImage() {
+		return image;
 	}
 
 	
